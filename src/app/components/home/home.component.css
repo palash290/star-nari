@@ -1,0 +1,21 @@
+.ct_story_horizontal_scroll {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding-bottom: 8px;
+  scroll-behavior: smooth;
+}
+
+.ct_story_horizontal_scroll::-webkit-scrollbar {
+  height: 5px;
+}
+
+.ct_story_horizontal_scroll::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+.ct_story_horizontal_scroll .item {
+  flex: 0 0 auto;
+}

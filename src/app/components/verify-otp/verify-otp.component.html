@@ -1,0 +1,95 @@
+<!-- <form [formGroup]="Form" class="mt-3">
+    <div class="form-group mb-2 ct_otp_inputs">
+        <nz-flex nzVertical [nzGap]="20">
+            <nz-flex nzVertical>
+                <label for="" class="mb-2 ">OTP</label>
+                <nz-input-otp formControlName="otp" [nzLength]="4" [nzSize]="'default'">
+                </nz-input-otp>
+                <span class="ct_text_red mt-2">
+                    {{ validationErrorService.getErrorMessage('OTP', Form.get('otp')) }}
+                </span>
+            </nz-flex>
+        </nz-flex>
+    </div>
+
+    <p class="mb-0 mt-2 text-center ">Didn't get OTP? <a (click)="resendOtp()"
+            class="ct_forgot_link ct_fw_600">Resend</a></p>
+
+    <div class="mt-4">
+        <a href="javascript:void(0)" type="button" (click)="onSubmit()" class="ct_blue_btn text-center w-100">Submit</a>
+    </div>
+
+    <p class="mb-0 text-center mt-3 ct_fw_500">Already know your password? <a routerLink="/"
+            class="ct_text_clr_151540 ct_fw_700">Login</a></p>
+</form> -->
+
+<section class="ct_pt_55 pb-5 pt-4 ">
+    <div class="container-fluid">
+        <div class="col-md-12">
+            <div class="ct_px_60">
+                <div class="ct_logo_img ct_mb_35">
+                    <a>
+                        <img src="/img/logo.png" alt="">
+                    </a>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="ct_login_left_img">
+                            <div class="ct_login_overlay_content">
+                                <h4 class="ct_fs_32  text-center ct_fw_600">Enter verification code</h4>
+                                <p class="mb-0 ct_fs_14 text-center">We have send a Code to : +100******00 Change</p>
+                                <form [formGroup]="Form" class="ct_mt_30">
+                                    <!-- <div class="ct_otp_input_main">
+                                        <input type="number" class="form-control ct_input">
+                                        <input type="number" class="form-control ct_input">
+                                        <input type="number" class="form-control ct_input">
+                                        <input type="number" class="form-control ct_input">
+                                    </div> -->
+
+                                    <nz-flex nzVertical [nzGap]="20">
+                                        <nz-flex nzVertical>
+                                            <nz-input-otp formControlName="otp" [nzLength]="4" [nzSize]="'default'">
+                                            </nz-input-otp>
+                                            <span class="ct_text_red mt-2">
+                                                {{ validationErrorService.getErrorMessage('OTP', Form.get('otp')) }}
+                                            </span>
+                                        </nz-flex>
+                                    </nz-flex>
+
+
+                                    <div class="ct_mt_30">
+                                        <button type="submit" class="ct_light_gradient_btn w-100 gap-2"
+                                            routerLink="/verify-instructions">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M5.625 9.375C5.625 5.625 5.625 3.125 10 3.125C14.375 3.125 14.375 5.625 14.375 9.375M10 12.5V14.375M3.125 9.375V18.75H16.875V9.375H3.125Z"
+                                                    stroke="#58003F" stroke-width="1.25" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M10 15.625C10.3452 15.625 10.625 15.3452 10.625 15C10.625 14.6548 10.3452 14.375 10 14.375C9.65482 14.375 9.375 14.6548 9.375 15C9.375 15.3452 9.65482 15.625 10 15.625Z"
+                                                    stroke="#58003F" stroke-width="1.25" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+
+                                            Confirm Code</button>
+                                    </div>
+                                    <div class="ct_mt_30 text-center">
+                                        <p class="ct_text_bringle_light ct_fs_14">Didn’t receive the OTP? <a
+                                                class="ct_bringle_text ct_decoration_underline">Resend Code</a></p>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 d-lg-block d-none">
+                        <div class="ct_login_right_img">
+                            <img src="/img/login_right_img_1.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

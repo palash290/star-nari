@@ -1,0 +1,182 @@
+<!-- <p>edit-profile works!</p>
+
+<label for="ct_upload_product">
+    <input type="file" name="" (change)="onProfileImage($event)" id="ct_upload_product" class="d-none" accept="image/*">
+    <div class="ct_browse_btn">
+        <span>Browse Files</span>
+    </div>
+</label>
+
+<div class="ct_profile_img">
+    <img [src]="croppedImage ? croppedImage : '/img/no_pro.png'" width="100" height="100" />
+</div>
+
+<button class="btn btn-primary mt-3" (click)="uploadCroppedImage()">Upload Cropped Image</button>
+
+<div class="modal fade modal-lg" id="ct_feedback_detail_modal" tabindex="-1"
+    aria-labelledby="ct_feedback_detail_modalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                <image-cropper [imageChangedEvent]="imageChangedEvent" [maintainAspectRatio]="true"
+                    [roundCropper]="true" [aspectRatio]="38 / 27" [resizeToWidth]="190" [resizeToHeight]="135"
+                    format="png" (imageCropped)="imageCropped($event)">
+                </image-cropper>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="ct_outline_btn" data-bs-dismiss="modal" #closeBtn>Cancel</button>
+                <button type="button" class="ct_black_btn" (click)="onDone()">Done</button>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<!-- <app-photo-editor></app-photo-editor> -->
+
+<div class="ct_right_content_main">
+    <div class="container-fluid">
+        <div class="row">
+            <app-header></app-header>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <div class="d-flex align-items-center gap-3 justify-content-between ct_flex_col_575">
+                    <h4 class="ct_fs_32 ct_fw_600 ct_bringle_text mb-0">
+                        <a routerLink="/main/my-profile" class="ct_bringle_text"><i
+                                class="fa-solid fa-angle-left me-2"></i></a>
+                        Edit Profile
+                    </h4>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row ct_mt_55">
+            <div class="col-md-12">
+                <form action="">
+                    <div class="ct_white_bg ct_light_white_bg">
+                        <div class="ct_profile_img2 mx-auto">
+                            <img src="/img/girl_img_2.jpg" alt="">
+                            <label for="ct_profile_update">
+                                <input type="file" class="d-none" id="ct_profile_update">
+                                <div class="ct_upload_icon">
+                                    <img src="/img/upload_icon.png" alt="">
+                                </div>
+                            </label>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group mb-4">
+                                <label for="" class="ct_fw_600 mb-2 d-block">Name</label>
+                                <input type="text" class="form-control ct_input" placeholder="Enter name"
+                                    value="Emma Watson">
+                            </div>
+
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group mb-4">
+                                <label for="" class="ct_fw_600 mb-2 d-block">Dob</label>
+                                <input type="date" class="form-control ct_input">
+                            </div>
+
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group mb-4">
+                                <label for="" class="ct_fw_600 mb-2 d-block">About Me</label>
+                                <textarea class="form-control ct_input h-auto" rows="4"
+                                    placeholder="Enter description here...">Teacher by profession, artist by heart 🎨 | Here to connect, learn, and share.</textarea>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4 class="ct_fs_26  ct_fw_600 ct_bringle_text mb-4">Interests </h4>
+                            <div class="ct_grid_3">
+                                <div class="ct_your_interest_card">
+                                    <div class="ct_interest_icon">
+                                        <img src="/img/cooking_icon.svg" alt="">
+
+                                    </div>
+                                    <h4 class="mb-0">Cooking</h4>
+                                </div>
+                                <div class="ct_your_interest_card active">
+                                    <div class="ct_interest_icon">
+                                        <img src="/img/Fashion_icon.svg" alt="">
+
+                                    </div>
+                                    <h4 class="mb-0">Fashion</h4>
+                                </div>
+                                <div class="ct_your_interest_card">
+                                    <div class="ct_interest_icon">
+                                        <img src="/img/Travelling_icon.svg" alt="">
+
+                                    </div>
+                                    <h4 class="mb-0">Travelling</h4>
+                                </div>
+                                <div class="ct_your_interest_card">
+                                    <div class="ct_interest_icon">
+                                        <img src="/img/Vloggin_icon.svg" alt="">
+
+                                    </div>
+                                    <h4 class="mb-0">Vlogging</h4>
+                                </div>
+                                <div class="ct_your_interest_card">
+                                    <div class="ct_interest_icon">
+                                        <img src="/img/Teaching_icon.svg" alt="">
+
+                                    </div>
+                                    <h4 class="mb-0">Teaching</h4>
+                                </div>
+                                <div class="ct_your_interest_card active">
+                                    <div class="ct_interest_icon">
+                                        <img src="/img/Music_icon.svg" alt="">
+
+                                    </div>
+                                    <h4 class="mb-0">Music</h4>
+                                </div>
+                                <div class="ct_your_interest_card active">
+                                    <div class="ct_interest_icon">
+                                        <img src="/img/Fitness_icon.svg" alt="">
+
+                                    </div>
+                                    <h4 class="mb-0">Fitness</h4>
+                                </div>
+                                <div class="ct_your_interest_card">
+                                    <div class="ct_interest_icon">
+                                        <img src="/img/Shopping_icon.svg" alt="">
+
+                                    </div>
+                                    <h4 class="mb-0">Shopping</h4>
+                                </div>
+                                <div class="ct_your_interest_card ">
+                                    <div class="ct_interest_icon">
+                                        <img src="/img/Dancing_icon.svg" alt="">
+
+                                    </div>
+                                    <h4 class="mb-0">Dancing</h4>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="d-flex align-items-center justify-content-end gap-3 mt-5 ct_flex_col_575">
+                        <a
+                            class="ct_bringle_btn ct_outline_bringle_btn px-5 ct_w_100_575">Cancel</a>
+                        <button class="ct_bringle_btn px-5 ct_w_100_575">Save Changes</button>
+
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+
+    </div>

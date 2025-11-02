@@ -1,0 +1,127 @@
+<div class="ct_right_content_main">
+    <div class="container-fluid">
+        <div class="row">
+             <app-header></app-header>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <div class="d-flex align-items-center gap-3 justify-content-between ct_flex_col_575">
+                    <h4 class="ct_fs_32 ct_fw_600 ct_bringle_text mb-0">
+                        <a routerLink="/main/view-contest" class="ct_bringle_text"><i
+                                class="fa-solid fa-angle-left me-2"></i></a>Contests Details
+                    </h4>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row ct_mt_30">
+            <div class="col-md-12">
+                <figure class="ct_kitty_group_profile_card">
+                    <div class="ct_kitty_group_img ct_overlay_bg_black_44">
+                        <img src="/img/contest_detail_bg.png" alt="" />
+                        <div class="ct_conset_end_date_overlay">
+                            <p class="ct_fs_20 text-white mb-1">Ends in</p>
+                            <h4 class="mb-0 ct_fs_28 text-white ct_fw_600">2d 14h 32m</h4>
+                        </div>
+                    </div>
+                    <figcaption class="ct_flex_col_767">
+                        <div>
+                            <h3 class="mb-3 ct_fs_30 ct_fw_600 ct_bringle_text">
+                                Creative Design Challenge
+                            </h3>
+                            <ul class="d-flex align-items-center gap-3">
+                                <li class="d-flex align-items-center ">
+                                    <img src="/img/calender_outline_icon.svg" alt="" class="me-2" />Ends on Feb
+                                    14, 2025
+                                </li>
+
+                            </ul>
+                        </div>
+
+                    </figcaption>
+                </figure>
+            </div>
+
+            <div class="col-md-12">
+                <div class="ct_white_bg ct_light_white_bg">
+                    <form action="javascript:void(0)">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group mb-4">
+                                    <label for="" class="mb-2 d-block ct_bringle_text ct_fw_600 ct_fs_18">Upload
+                                        Media</label>
+                                    <div class="ct_upload_product_main ct_upload_product_main_180">
+
+                                        <p class="text-center ct_fs_18 ct_text_op_07 mb-0">
+                                            Upload your image here
+                                        </p>
+                                        <label for="ct_upload_product">
+                                            <input type="file" name="" id="ct_upload_product" class="d-none" />
+                                            <div class="ct_browse_btn mt-3">
+                                                <span>Browse Files</span>
+                                            </div>
+                                        </label>
+                                    </div>
+
+                                    <div class="ct_single_uploaded_img mt-3 d-none">
+                                        <img src="user_3.png" alt="" />
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group mb-4">
+                                    <label for="" class="mb-2 d-block ct_bringle_text ct_fw_600 ct_fs_18">Entry
+                                        Title</label>
+                                    <input type="text" class="form-control ct_input" placeholder="Enter title" />
+                                </div>
+
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group mb-4">
+                                    <label for="" class="mb-2 d-block ct_bringle_text ct_fw_600 ct_fs_18">Description &
+                                        Instructions</label>
+                                    <textarea class="form-control ct_input h-auto" rows="4"
+                                        placeholder="Describe your recipe, ingredients, and cooking steps..."></textarea>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                        <div class="d-flex align-items-center justify-content-end gap-3 mt-5 ct_flex_col_575">
+                            <a href="contest-details.html"
+                                class="ct_bringle_btn ct_outline_bringle_btn px-5 ct_w_100_575">Cancel</a>
+                            <button class="ct_bringle_btn px-5 ct_w_100_575" data-bs-toggle="modal"
+                                data-bs-target="#ct_entry_submitted">Submit</button>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ct_vote_submitted -->
+<div class="modal fade " id="ct_entry_submitted" tabindex="-1" aria-labelledby="ct_entry_submittedLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered ">
+        <div class="modal-content ct_modal_bg_before">
+            <div class="modal-header border-0">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body pb-5 px-5">
+                <div class="text-center">
+                    <img src="/img/entry_submitted_icon.svg" alt="" class="d-block mb-3 mx-auto">
+                    <h4 class="ct_fs_26 ct_fw_600">Entry Submitted!</h4>
+                    <p class="mb-0">Your contest entry has been received successfully. <br> Best of luck!</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

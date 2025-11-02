@@ -1,0 +1,9 @@
+<div class="story-list">
+    <div *ngFor="let story of stories; let i = index" class="story-item" (click)="openStory(i)">
+        <img [src]="story.profilePic" class="avatar" />
+        <p>{{ story.userName }}</p>
+    </div>
+</div>
+
+<app-story-viewer *ngIf="activeIndex !== null" [stories]="stories" [activeIndex]="activeIndex"
+    (close)="closeViewer()" />

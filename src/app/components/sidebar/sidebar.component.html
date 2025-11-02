@@ -1,0 +1,43 @@
+<div class="ct_sidebar">
+    <div class="ct_dash_logo">
+        <img src="/img/logo.png" alt="" />
+    </div>
+    <div>
+        <a routerLink="/main/my-profile">
+            <div class="ct_profile_img">
+                <img src="/img/girl_img.jpg" alt="" class="ct_img_75" />.
+                <p class="mb-0">Profile</p>
+            </div>
+            <div class="text-center mt-3">
+                <h4 class="ct_bringle_text ct_fw_600 ct_fs_16 mb-1">
+                    Priya Sharma
+                </h4>
+                <p class="mb-0 ct_text_4B5563">+91 7867654567</p>
+            </div>
+        </a>
+    </div>
+
+    <ul class="ct_mt_55">
+        <li>
+            <a routerLink="/main/home" [ngClass]="{ 'active': isActive('/main/home') }"><img
+                    src="/img/dashboard_icon.svg" alt="" />Home</a>
+        </li>
+        <li>
+            <a routerLink="/main/kitty-groups" [ngClass]="{ 'active': isActive('/main/kitty-groups') }"><img
+                    src="/img/kitty_group_icon.svg" alt="" />Kitty
+                Groups</a>
+        </li>
+        <li>
+            <a routerLink="/main/marketplace" [ngClass]="{ 'active': isActive('/main/marketplace') }"><img
+                    src="/img/marketplace_icon.svg" alt="" />Marketplace</a>
+        </li>
+        <li>
+            <a routerLink="/main/contests" [ngClass]="{ 'active': isActive('/main/contests') }"><img
+                    src="/img/contests_icon.svg" alt="" />Contests</a>
+        </li>
+        <li>
+            <a routerLink="/main/wellness" [ngClass]="{ 'active': isActive('/main/wellness') }"><img
+                    src="/img/wellness_icon.svg" alt="" />Wellness</a>
+        </li>
+    </ul>
+</div>

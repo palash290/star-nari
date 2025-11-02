@@ -1,0 +1,76 @@
+<div class="ct_right_content_main">
+    <div class="container-fluid">
+        <div class="row">
+            <app-header></app-header>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <div class="d-flex align-items-center gap-2 justify-content-between">
+                    <h4 class="ct_fs_32 ct_fw_600 ct_bringle_text mb-0">
+                        <a routerLink="/main/kitty-groups" class="ct_bringle_text"><i
+                                class="fa-solid fa-angle-left me-2"></i></a>Create Kitty Group
+                    </h4>
+                </div>
+
+                <div class="ct_white_bg ct_light_white_bg ct_mt_55 p-md-5">
+                    <form action="">
+                        <div class="form-group mb-4">
+                            <label for="" class="mb-2 d-block ct_bringle_text ct_fw_600 ct_fs_18">Group Name</label>
+                            <input type="text" class="form-control ct_input" placeholder="Enter your group name" />
+                        </div>
+                        <div class="form-group mb-4">
+                            <label for="" class="mb-2 d-block ct_bringle_text ct_fw_600 ct_fs_18">About</label>
+                            <textarea class="form-control ct_input h-auto" rows="4"
+                                placeholder="Describe the purpose and goals of your kitty group"></textarea>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label for="" class="mb-2 d-block ct_bringle_text ct_fw_600 ct_fs_18">Cover Photo</label>
+                            <div class="ct_upload_product_main ct_upload_product_main_180">
+
+                                <p class="text-center ct_fs_18 ct_text_op_07 mb-0">
+                                    Upload your image here
+                                </p>
+                                <label for="ct_upload_product">
+                                    <input type="file" name="" id="ct_upload_product" class="d-none" />
+                                    <div class="ct_browse_btn mt-3">
+                                        <span>Browse Files</span>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="ct_single_uploaded_img mt-3 d-none">
+                                <img src="user_3.png" alt="" />
+                                <i class="fa-solid fa-xmark"></i>
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label for="" class="mb-2 d-block ct_bringle_text ct_fw_600 ct_fs_18">Max Members
+                                Allowed</label>
+                            <input type="number" class="form-control ct_input"
+                                placeholder="Enter maximum number of members" />
+                        </div>
+                        <div class="form-group mb-4">
+                            <label for="" class="mb-2 d-block ct_bringle_text ct_fw_600 ct_fs_18">Location</label>
+                            <input type="number" class="form-control ct_input" placeholder="Enter location or area" />
+                        </div>
+                        <div class="form-group mb-4">
+                            <label for="" class="mb-2 d-block ct_bringle_text ct_fw_600 ct_fs_18">Contribution
+                                Amount</label>
+                            <input type="number" class="form-control ct_input"
+                                placeholder="Enter contribution amount" />
+                        </div>
+
+                        <div class="d-flex align-items-center justify-content-end gap-3 mt-5 ct_flex_col_575">
+                            <a
+                                class="ct_bringle_btn ct_outline_bringle_btn px-5 ct_w_100_575">Cancel</a>
+                            <button class="ct_bringle_btn px-5 ct_w_100_575">Continue</button>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

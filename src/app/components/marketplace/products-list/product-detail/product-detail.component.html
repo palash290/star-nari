@@ -1,0 +1,131 @@
+<div class="ct_right_content_main">
+  <div class="container-fluid">
+    <div class="row">
+      <app-header></app-header>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-md-12">
+        <div class="d-flex align-items-center gap-3 justify-content-between ct_flex_col_767">
+          <h4 class="ct_fs_32 ct_fw_600 ct_bringle_text mb-0 ct_white_nowrap">
+            <a (click)="backClicked()" class="ct_bringle_text"><i class="fa-solid fa-angle-left"></i></a>Product
+            Details
+          </h4>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="row ct_mt_30">
+      <div class="col-lg-4 col-md-4 mb-4">
+        <div class="ct_gallery_right">
+          <img src="/img/girl_img.jpg" alt="">
+          <img src="/img/girl_img.jpg" alt="">
+          <img src="/img/girl_img.jpg" alt="">
+          <img src="/img/girl_img.jpg" alt="">
+          <button class="ct_show_all_images_btn" data-bs-toggle="modal" data-bs-target="#ct_show_all_photos">
+            <i class="fa-regular fa-image me-1"></i>
+            Show all
+            Photos
+          </button>
+        </div>
+
+      </div>
+      <div class="col-lg-8 col-md-8 mb-4">
+        <h4 class="ct_fs_22 ct_fw_600 mb-2">Wear Pray Love Set – Green Quartz and Green Amethyst</h4>
+        <h5 class="ct_fs_22 ct_bringle_text ct_fw_600">₹1,200</h5>
+        <div class="d-flex align-items-center gap-3 ct_mt_22 ct_flex_col_575">
+          <a routerLink="/main/chats" class="ct_bringle_btn px-5 ct_w_100_575">Contact To Seller</a>
+          <button class="ct_white_btn px-5 ct_w_100_575"><i class="fa-regular fa-heart me-2"></i> WISHLIST</button>
+
+        </div>
+        <hr class="ct_mt_30 ct_mb_30">
+        <div>
+          <h4 class="ct_fs_18 mb-3 ct_fw_600">Description</h4>
+          <p class="ct_para_scroll ct_custom_scroll mb-0">Elegant handcrafted jewelry set perfect for festive wear and
+            special occasions. Features intricate traditional designs with modern appeal. Lightweight and skin-friendly
+            materials ensure comfortable all- day wear. Each piece is carefully crafted by skilled artisans.</p>
+        </div>
+        <div class="ct_mt_30">
+          <h4 class="ct_fs_20 ct_fw_600 mb-3">Seller Information</h4>
+        </div>
+
+        <div class="profile-card">
+          <div class="profile-left">
+            <img src="/img/user_1.png" alt="Profile" class="profile-img">
+            <div class="profile-info">
+              <h4>Priya Crafts</h4>
+              <p>Jewelry & Ornaments</p>
+            </div>
+            <div class="verified">
+              <span>✔</span>
+            </div>
+          </div>
+          <div class="profile-logo">
+            <img src="/img/Group_1171276263.png" alt="Brand Logo">
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- Show all Photos Modal S -->
+<div class="modal fade modal-lg" id="ct_show_all_photos" tabindex="-1" aria-labelledby="ct_show_all_photosLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class=" modal-content">
+      <div class="modal-header border-0 pb-2">
+        <h4 class="ct_fs_20 ct_fw_600 mb-0">All Photos</h4>
+        <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="owl-carousel owl-theme ct_product_gallary_slider">
+          <div class="item">
+            <div class="ct_product_gallry_img">
+              <img src="/img/product_img_124.jpg" alt="">
+            </div>
+          </div>
+          <div class="item">
+            <div class="ct_product_gallry_img">
+              <img src="/img/product_img_123.jpg" alt="">
+            </div>
+          </div>
+          <div class="item">
+            <div class="ct_product_gallry_img">
+              <img src="/img/product_img_123.jpg" alt="">
+            </div>
+          </div>
+          <div class="item">
+            <div class="ct_product_gallry_img">
+              <img src="/img/product_img_123.jpg" alt="">
+            </div>
+          </div>
+          <div class="item">
+            <div class="ct_product_gallry_img">
+              <img src="/img/product_img_123.jpg" alt="">
+            </div>
+          </div>
+          <div class="item">
+            <div class="ct_product_gallry_img">
+              <img src="/img/product_img_123.jpg" alt="">
+            </div>
+          </div>
+          <div class="item">
+            <div class="ct_product_gallry_img">
+              <img src="/img/product_img_123.jpg" alt="">
+            </div>
+          </div>
+          <div class="item">
+            <div class="ct_product_gallry_img">
+              <img src="/img/product_img_123.jpg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Show all Photos Modal E -->

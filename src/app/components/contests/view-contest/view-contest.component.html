@@ -1,0 +1,138 @@
+<div class="ct_right_content_main">
+    <div class="container-fluid">
+        <div class="row">
+            <app-header></app-header>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <div class="d-flex align-items-center gap-3 justify-content-between ct_flex_col_575">
+                    <h4 class="ct_fs_32 ct_fw_600 ct_bringle_text mb-0">
+                        <a routerLink="/main/contests" class="ct_bringle_text"><i
+                                class="fa-solid fa-angle-left me-2"></i></a>Contests Details
+                    </h4>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row ct_mt_30">
+            <div class="col-md-12">
+                <figure class="ct_kitty_group_profile_card">
+                    <div class="ct_kitty_group_img ct_overlay_bg_black_44">
+                        <img src="/img/contest_detail_bg.png" alt="" />
+                        <div class="ct_conset_end_date_overlay">
+                            <p class="ct_fs_20 text-white mb-1">Ends in</p>
+                            <h4 class="mb-0 ct_fs_28 text-white ct_fw_600">2d 14h 32m</h4>
+                        </div>
+                    </div>
+                    <figcaption class="ct_flex_col_767">
+                        <div>
+                            <h3 class="mb-3 ct_fs_30 ct_fw_600 ct_bringle_text">
+                                Creative Design Challenge
+                            </h3>
+                            <ul class="d-flex align-items-center gap-3">
+                                <li class="d-flex align-items-center ">
+                                    <img src="/img/calender_outline_icon.svg" alt="" class="me-2" />Ends on Feb
+                                    14, 2025
+                                </li>
+
+                            </ul>
+                        </div>
+
+                    </figcaption>
+                </figure>
+            </div>
+
+            <div class="col-md-12">
+                <div class="ct_white_bg ct_light_white_bg">
+                    <ul class="nav nav-pills mb-3 ct_custom_tabs w-100 justify-content-between" id="pills-tab"
+                        role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="pills-About-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-About" type="button" role="tab" aria-controls="pills-About"
+                                aria-selected="true">
+                                About
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="pills-Rules-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-Rules" type="button" role="tab" aria-controls="pills-Rules"
+                                aria-selected="false" tabindex="-1">
+                                Rules
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="pills-How_to_Submit-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-How_to_Submit" type="button" role="tab"
+                                aria-controls="pills-How_to_Submit" aria-selected="false" tabindex="-1">
+                                How to Submit
+                            </button>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content ct_mt_55" id="pills-tabContent">
+                        <div class="tab-pane fade active show" id="pills-About" role="tabpanel"
+                            aria-labelledby="pills-About-tab">
+                            <h4 class="ct_fs_24 ct_fw_600 mb-3">Description</h4>
+                            <p class="ct_fs_20 ct_para_scroll ct_custom_scroll mb-0">
+                                Submit your most creative and delicious recipe! Whether it's a family secret or your
+                                latest culinary experiment, we want to see what makes your dish special.
+                            </p>
+                            <div class="ct_mt_30">
+                                <h4 class="ct_fs_24 ct_fw_600 mb-3">
+                                    Prize Pool
+                                </h4>
+                                <p class="ct_fs_20 ct_para_scroll ct_custom_scroll mb-0">
+                                    Skincare kit & Nykaa Gift Voucher of ₹5000
+                                </p>
+                                <div class="d-flex align-items-center justify-content-end gap-3 mt-5 ct_flex_col_575">
+                                    <a routerLink="/main/vote-contest"
+                                        class="ct_bringle_btn ct_outline_bringle_btn px-5 ct_w_100_575">Vote Now</a>
+                                    <a routerLink="/main/enter-contest" class="ct_bringle_btn px-5 ct_w_100_575">Enter
+                                        Now</a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills-Rules" role="tabpanel" aria-labelledby="pills-Rules-tab">
+                            <div>
+                                <h4 class="ct_fs_24 mb-2 ct_fw_600">Contest Rules</h4>
+                                <ul class="mt-3 ps-3" style="list-style: disc;">
+                                    <li class="ct_text_4B5563">Original recipes only</li>
+                                    <li class="mt-2 ct_text_4B5563">Include clear photos and instructions</li>
+                                    <li class="mt-2 ct_text_4B5563">Multiple entries allowed</li>
+                                </ul>
+                                <div class="d-flex align-items-center justify-content-end gap-3 mt-5 ct_flex_col_575">
+                                    <a routerLink="/main/vote-contest"
+                                        class="ct_bringle_btn ct_outline_bringle_btn px-5 ct_w_100_575">Vote Now</a>
+                                    <a routerLink="/main/enter-contest" class="ct_bringle_btn px-5 ct_w_100_575">Enter
+                                        Now</a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills-How_to_Submit" role="tabpanel"
+                            aria-labelledby="pills-How_to_Submit-tab">
+                            <div>
+                                <h4 class="ct_fs_24 mb-2 ct_fw_600">How To Submit</h4>
+                                <ul class="mt-3 ps-3" style="list-style: decimal;">
+                                    <li class="ct_text_4B5563">Upload photos of your dish and cooking process</li>
+                                    <li class="mt-2 ct_text_4B5563">Add a catchy title and detailed description</li>
+                                    <li class="mt-2 ct_text_4B5563">Submit and wait for judging results</li>
+                                </ul>
+                                <div class="d-flex align-items-center justify-content-end gap-3 mt-5 ct_flex_col_575">
+                                    <a routerLink="/main/vote-contest"
+                                        class="ct_bringle_btn ct_outline_bringle_btn px-5 ct_w_100_575">Vote Now</a>
+                                    <a routerLink="/main/enter-contest" class="ct_bringle_btn px-5 ct_w_100_575">Enter
+                                        Now</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+<div class="overlay" (click)="close.emit()"></div>
+
+<div class="viewer">
+
+  <div class="progress-bar-container">
+    <div *ngFor="let media of currentUser.media; let j = index" class="progress-bar">
+      <div class="progress" [style.width.%]="getProgress(j)"></div>
+    </div>
+  </div>
+
+  <!-- Close Button -->
+  <button class="close-btn" (click)="close.emit()">✕</button>
+
+  <!-- User Info -->
+  <div class="user-info">
+    <img [src]="currentUser.profilePic" class="avatar" />
+    <p>{{ currentUser.userName }}</p>
+  </div>
+
+  <!-- Story content -->
+  <div class="story-content" (mousedown)="pause()" (mouseup)="resume()" (touchstart)="pause()" (touchend)="resume()">
+
+    <!-- Tap zones (next/prev media) -->
+    <div class="tap-zone left" [style.pointer-events]="isCommentFocused ? 'none' : 'auto'" (click)="prevMedia()">
+    </div>
+
+    <div class="tap-zone right" [style.pointer-events]="isCommentFocused ? 'none' : 'auto'" (click)="nextMedia()">
+    </div>
+
+    <ng-container *ngIf="currentMedia.type == 'image'">
+      <img [src]="currentMedia.url" />
+    </ng-container>
+
+    <ng-container *ngIf="currentMedia.type == 'video'">
+      <video #storyVideo [src]="currentMedia.url" autoplay muted playsinline></video>
+    </ng-container>
+  </div>
+
+  <!-- Navigation arrows (next/prev user) -->
+  <!-- <button class="nav-btn left" (click)="prevUser()">&#10094;</button>
+    <button class="nav-btn right" (click)="nextUser()">&#10095;</button> -->
+
+  <!-- Comment input -->
+  <input type="text" class="comment-input" placeholder="Comment..." (focus)="onCommentFocus()" (blur)="onCommentBlur()"
+    (click)="$event.stopPropagation()" />
+
+</div>

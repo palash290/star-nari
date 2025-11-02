@@ -1,0 +1,19 @@
+ .story-list {
+   display: flex;
+   gap: 10px;
+   overflow-x: auto;
+   padding: 10px;
+ }
+
+ .story-item {
+   text-align: center;
+   cursor: pointer;
+ }
+
+ .avatar {
+   width: 60px;
+   height: 60px;
+   border-radius: 50%;
+   object-fit: cover;
+   border: 2px solid #ff004c;
+ }

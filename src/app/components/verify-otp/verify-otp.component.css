@@ -1,0 +1,9 @@
+.ant-otp-input {
+    width: 40px !important;
+    height: 40px;
+    border-radius: 5px !important;
+}
+
+.ant-otp {
+    justify-content: center;
+}

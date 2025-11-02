@@ -1,0 +1,43 @@
+<section class="ct_pt_55 pb-5 pt-4 ">
+  <div class="container-fluid">
+    <div class="col-md-12">
+      <div class="ct_px_60">
+        <div class="ct_logo_img ct_mb_35">
+          <a>
+            <img src="/img/logo.png" alt="">
+          </a>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="ct_login_left_img">
+              <div class="ct_login_overlay_content">
+                <div class="">
+                  <div class="ct_take_selfie_img">
+                    <!-- <img src="/img/take_a_selfie_img.png" alt=""> -->
+                    @if(!capturedImage){
+                    <video #video width="320" height="240" autoplay></video>
+                    }
+                    @if(capturedImage){
+                    <img [src]="capturedImage" alt="Captured Photo" />
+                    }
+                  </div>
+                  <button (click)="capturePhoto()">Capture</button>
+                  <div class="mt-5">
+                    <a routerLink="/about-yourself" type="submit" class="ct_light_gradient_btn w-100">
+                      Tell Us About Yourself</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 d-lg-block d-none">
+            <div class="ct_login_right_img p-3">
+              <img src="/img/verify_account_right_img.png" alt="" class="ct_object_contain">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

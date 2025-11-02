@@ -1,0 +1,20 @@
+<!-- <div class="upload-bar">
+  <input #fileInput type="file" accept="image/*,video/*" (change)="onFileSelected($event)" hidden />
+  <button class="upload-btn" (click)="fileInput.click()">Upload Image or Video</button>
+</div>
+
+<div #cesdkContainer style="width: 100vw; height: 90vh; margin-top: 10px;"></div> -->
+
+<div class="editor-wrapper">
+  <button class="btn btn-primary mb-3" (click)="fileInput.click()">Upload Image/Video</button>
+  <input type="file" accept="image/*,video/*" (change)="onFileSelected($event)" #fileInput hidden />
+
+  <div #cesdk_container style="width: 100%; height: 90vh;"></div>
+
+  <div *ngIf="!sceneReady" class="text-center mt-3">
+    <p>🕓 Initializing editor, please wait...</p>
+  </div>
+</div>
+
+
+

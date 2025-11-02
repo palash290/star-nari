@@ -1,0 +1,30 @@
+<div class="ct_right_content_main">
+    <div class="container-fluid">
+        <div class="row">
+                  <app-header></app-header>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <div class="d-flex align-items-center gap-3 justify-content-between ct_flex_col_575">
+                    <h4 class="ct_fs_32 ct_fw_600 ct_bringle_text mb-0">
+                        <a routerLink="/main/home" class="ct_bringle_text"><i
+                                class="fa-solid fa-angle-left me-2"></i></a>
+                        Settings
+                    </h4>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="ct_white_bg ct_light_white_bg ct_mt_55 py-5 position-relative overflow-hidden">
+            <div class="row ">
+                <div class="col-xxl-3 col-xl-4">
+                    <app-setting-sidebar></app-setting-sidebar>
+                </div>
+                <div class="col-xxl-9 col-xl-8">
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+        </div>
+    </div>
