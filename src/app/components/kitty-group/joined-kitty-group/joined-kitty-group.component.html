@@ -1,0 +1,449 @@
+<div class="ct_right_content_main">
+    <div class="container-fluid">
+        <div class="row">
+            <app-header></app-header>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <div class="d-flex align-items-center gap-3 justify-content-between ct_flex_col_575">
+                    <h4 class="ct_fs_32 ct_fw_600 ct_bringle_text mb-0">
+                        <a routerLink="/main/kitty-groups" class="ct_bringle_text"><i
+                                class="fa-solid fa-angle-left me-2"></i></a>Kitty Group Details
+                    </h4>
+                    <div class="form-group ct_w_100_575">
+                        <select class="form-control ct_input ct_h_50 ct_border_radius_10 ct_select_transparent">
+                            <option>All Groups</option>
+                            <option>Joined Groups</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row ct_mt_30">
+            <div class="col-md-12">
+                <figure class="ct_kitty_group_profile_card">
+                    <div class="ct_kitty_group_img">
+                        <img src="/img/group_img_1.jpg" alt="" />
+                    </div>
+                    <figcaption class="ct_flex_col_767">
+                        <div>
+                            <h3 class="mb-3 ct_fs_30 ct_fw_600 ct_bringle_text">
+                                Sparkle Kitty Club
+                            </h3>
+                            <ul class="d-flex align-items-center gap-3">
+                                <li>
+                                    <img src="/img/location_black_icon.svg" alt="" class="me-2" />Delhi NCR
+                                </li>
+                                <li>
+                                    <img src="/img/formkit_people.svg" alt="" class="me-2" />3k Members
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="ct_share_circle">
+                                <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M14.868 8.06354V4.57532C14.868 4.272 14.9884 3.9811 15.2029 3.76662C15.4174 3.55213 15.7083 3.43164 16.0116 3.43164C16.3117 3.4329 16.5992 3.55202 16.8122 3.76331L24.818 11.7691C24.9251 11.8754 25.0102 12.0019 25.0683 12.1412C25.1264 12.2806 25.1562 12.4301 25.1562 12.5811C25.1562 12.732 25.1264 12.8815 25.0683 13.0209C25.0102 13.1603 24.9251 13.2868 24.818 13.3931L16.8122 21.3988C16.6517 21.5562 16.4483 21.6628 16.2275 21.7052C16.0067 21.7476 15.7783 21.7241 15.5709 21.6374C15.3634 21.5508 15.1861 21.4049 15.0611 21.2181C14.9361 21.0312 14.8689 20.8116 14.868 20.5868V17.0414H13.8958C12.0889 17.0145 10.2978 17.381 8.64672 18.1157C6.99568 18.8504 5.52429 19.9356 4.33468 21.2959C4.19132 21.4868 3.99183 21.628 3.76417 21.6998C3.53652 21.7715 3.29211 21.7703 3.0652 21.6962C2.83428 21.6183 2.6343 21.4686 2.4944 21.269C2.35451 21.0695 2.28201 20.8305 2.2875 20.5868C2.2875 10.1565 11.5284 8.37233 14.868 8.06354ZM13.8958 14.7312C14.6607 14.7297 15.4249 14.7794 16.1832 14.8799C16.4539 14.9209 16.701 15.0578 16.8794 15.2656C17.0578 15.4734 17.1557 15.7382 17.1553 16.0121V17.8305L22.3934 12.5811L17.1553 7.33158V9.15003C17.1553 9.45335 17.0348 9.74425 16.8203 9.95873C16.6059 10.1732 16.315 10.2937 16.0116 10.2937C14.9709 10.2937 6.7364 10.5224 4.95227 17.6476C7.5419 15.7383 10.6785 14.7155 13.8958 14.7312Z"
+                                        fill="#58003F"></path>
+                                </svg>
+                            </div>
+
+                            <a href="chat.html" class="ct_bringle_btn">Chat</a>
+                        </div>
+                    </figcaption>
+                </figure>
+            </div>
+
+            <div class="col-md-12">
+                <div class="ct_white_bg ct_light_white_bg">
+                    <ul class="nav nav-pills mb-3 ct_custom_tabs w-100 justify-content-between" id="pills-tab"
+                        role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="pills-About-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-About" type="button" role="tab" aria-controls="pills-About"
+                                aria-selected="true">
+                                About
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="pills-Feed-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-Feed" type="button" role="tab" aria-controls="pills-Feed"
+                                aria-selected="false" tabindex="-1">
+                                Feed
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="pills-Members-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-Members" type="button" role="tab" aria-controls="pills-Members"
+                                aria-selected="false" tabindex="-1">
+                                Members
+                            </button>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content ct_mt_55" id="pills-tabContent">
+                        <div class="tab-pane fade active show" id="pills-About" role="tabpanel"
+                            aria-labelledby="pills-About-tab">
+                            <h4 class="ct_fs_24 ct_fw_600 mb-3">About</h4>
+                            <p class="ct_fs_20 ct_para_scroll ct_custom_scroll mb-0">
+                                A fun and friendly kitty group for working moms. We plan
+                                monthly contributions, events, and interactive activities
+                                to stay connected and empowered. Together, we share
+                                experiences, celebrate milestones, and support each other
+                                through both challenges and achievements. From fun
+                                get-togethers to meaningful discussions, this group is all
+                                about building lasting bonds, financial discipline, and
+                                women’s empowerment in a safe and positive space. Join us
+                                to learn, grow, and create joyful memories with
+                                like-minded women.
+                            </p>
+                            <div class="ct_mt_30">
+                                <h4 class="ct_fs_24 ct_fw_600 mb-3">
+                                    Kitty BC Information
+                                </h4>
+                                <ul>
+                                    <li>Total Balance: ₹120,0000</li>
+                                    <li class="mt-2">
+                                        Members contribution: ₹2,000 / month
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills-Feed" role="tabpanel" aria-labelledby="pills-Feed-tab">
+                            <div>
+                                <div class="ct_mt_30">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <img src="/img/user_1.png" alt="" class="ct_img_44 ct_white_border_1" />
+                                        <div>
+                                            <h5 class="ct_fs_14 ct_fw_600 mb-1">
+                                                Shreya Sharma
+                                            </h5>
+                                            <div class="d-flex align-items-center gap-3">
+                                                <p class="mb-0 ct_fs_12 ct_text_4B5563">
+                                                    July 26 2018, 01:03pm
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <p class="ct_fs_13 mb-0 ct_line_height_22 mt-3">
+                                        <span>Yesterday with Karen Miller and Marvin
+                                            Stemperd at the #Rock'n'Rolla concert in LA. Was
+                                            totally fantastic! People were really excited about
+                                            this one!</span>
+                                    </p>
+
+                                    <div class="ct_feed_img ct_mt_22">
+                                        <img src="/img/feed_img.png" alt="" />
+                                    </div>
+
+                                    <div class="ct_like_comment_div">
+                                        <ul>
+                                            <li>
+                                                <div
+                                                    class="ct_like_btn d-flex align-items-center gap-2 ct_cursor_pointer">
+                                                    <!-- show this class ct_active_like when user will like  -->
+                                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M8.00745 3.43164C4.84976 3.43164 2.28906 5.96603 2.28906 9.09285C2.28906 11.6169 3.28978 17.6075 13.1403 23.6633C13.3169 23.7701 13.5194 23.8265 13.7258 23.8265C13.9323 23.8265 14.1347 23.7701 14.3114 23.6633C24.1631 17.6075 25.1626 11.6169 25.1626 9.09285C25.1626 5.96603 22.6019 3.43164 19.4442 3.43164C16.2865 3.43164 13.7258 6.86268 13.7258 6.86268C13.7258 6.86268 11.1651 3.43164 8.00745 3.43164Z"
+                                                            stroke="#58003F" stroke-width="1.90613"
+                                                            stroke-linecap="round" stroke-linejoin="round" />
+                                                    </svg>
+
+                                                    <p class="mb-0 ct_fw_500">12.5 K</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div
+                                                    class="ct_comment_bnt d-flex align-items-center gap-2 ct_cursor_pointer">
+                                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M4.91842 19.1001C3.60758 16.9498 3.13052 14.3935 3.57755 11.9152C4.02458 9.43686 5.36468 7.20839 7.34418 5.65159C9.32369 4.0948 11.8052 3.31772 14.3191 3.46744C16.833 3.61715 19.2048 4.68328 20.9855 6.46401C22.7663 8.24475 23.8324 10.6165 23.9821 13.1304C24.1318 15.6443 23.3547 18.1258 21.7979 20.1053C20.2411 22.0848 18.0127 23.4249 15.5343 23.872C13.056 24.319 10.4997 23.842 8.34945 22.5311L3.43163 24.0179L4.91842 19.1001Z"
+                                                            stroke="#58003F" stroke-width="1.90613"
+                                                            stroke-linecap="round" stroke-linejoin="round" />
+                                                    </svg>
+
+                                                    <p class="mb-0 ct_fw_500">657</p>
+                                                </div>
+                                            </li>
+                                            <li class="ct_book_mark_icon ct_cursor_pointer">
+                                                <!-- add this class ct_book_mark_icon_active when user will book marked  -->
+                                                <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M14.868 8.06354V4.57532C14.868 4.272 14.9884 3.9811 15.2029 3.76662C15.4174 3.55213 15.7083 3.43164 16.0116 3.43164C16.3117 3.4329 16.5992 3.55202 16.8122 3.76331L24.818 11.7691C24.9251 11.8754 25.0102 12.0019 25.0683 12.1412C25.1264 12.2806 25.1562 12.4301 25.1562 12.5811C25.1562 12.732 25.1264 12.8815 25.0683 13.0209C25.0102 13.1603 24.9251 13.2868 24.818 13.3931L16.8122 21.3988C16.6517 21.5562 16.4483 21.6628 16.2275 21.7052C16.0067 21.7476 15.7783 21.7241 15.5709 21.6374C15.3634 21.5508 15.1861 21.4049 15.0611 21.2181C14.9361 21.0312 14.8689 20.8116 14.868 20.5868V17.0414H13.8958C12.0889 17.0145 10.2978 17.381 8.64672 18.1157C6.99568 18.8504 5.52429 19.9356 4.33468 21.2959C4.19132 21.4868 3.99183 21.628 3.76417 21.6998C3.53652 21.7715 3.29211 21.7703 3.0652 21.6962C2.83428 21.6183 2.6343 21.4686 2.4944 21.269C2.35451 21.0695 2.28201 20.8305 2.2875 20.5868C2.2875 10.1565 11.5284 8.37233 14.868 8.06354ZM13.8958 14.7312C14.6607 14.7297 15.4249 14.7794 16.1832 14.8799C16.4539 14.9209 16.701 15.0578 16.8794 15.2656C17.0578 15.4734 17.1557 15.7382 17.1553 16.0121V17.8305L22.3934 12.5811L17.1553 7.33158V9.15003C17.1553 9.45335 17.0348 9.74425 16.8203 9.95873C16.6059 10.1732 16.315 10.2937 16.0116 10.2937C14.9709 10.2937 6.7364 10.5224 4.95227 17.6476C7.5419 15.7383 10.6785 14.7155 13.8958 14.7312Z"
+                                                        fill="#58003F" />
+                                                </svg>
+                                            </li>
+                                        </ul>
+                                        <!-- show this div when user click on comment -->
+                                        <div class="ct_comment_area_main mt-4 d-none">
+                                            <input type="text" class="form-control ct_input w-100"
+                                                placeholder="Write comment..." />
+
+                                            <div class="ct_comment_area_scroll">
+                                                <div class="d-flex justify-content-between gap-2 mt-3">
+                                                    <div class="d-flex gap-3">
+                                                        <img src="/img/user_1.png" alt=""
+                                                            class="ct_img_40 ct_bor ct_white_border_1" />
+                                                        <div style="flex: 1">
+                                                            <div class="d-flex align-items-center gap-2 flex-wrap">
+                                                                <h5 class="ct_fs_15 ct_fw_600 mb-0">
+                                                                    Bradford Bogisich
+                                                                </h5>
+                                                                <div class="d-flex align-items-center gap-3">
+                                                                    <p class="mb-0 ct_fs_12">2 days ago</p>
+                                                                </div>
+                                                            </div>
+                                                            <p
+                                                                class="ct_fs_13 mb-0 ct_line_height_22 ct_commented_text mt-3">
+                                                                <span>Design Shot is an invitation to ponder
+                                                                    cn design as a living entity. capture of
+                                                                    embodying and influencing the flow of
+                                                                    thoughts and sensations in</span>
+                                                                <a href="#" class="ct_orange_text">Read more</a>
+                                                            </p>
+
+                                                            <div class="mt-4">
+                                                                <button
+                                                                    class="ct_bringle_btn ct_tansparent_btn w-100 ct_white_border_1 ct_border_radius_10">
+                                                                    Load more comments
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ct_like_btn">
+                                                        <!-- show this class ct_active_like when user will like  -->
+                                                        <svg width="21" height="19" viewBox="0 0 21 19" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path
+                                                                d="M9.89087 3.72644L10.5 5.36195L11.1091 3.72644C11.7765 1.93453 13.526 0.65 15.5846 0.65C18.2251 0.65 20.35 2.75864 20.35 5.34124C20.35 9.36765 17.8894 12.6195 15.3175 14.9115C14.0405 16.0496 12.7606 16.9283 11.7989 17.5227C11.3187 17.8195 10.9197 18.0443 10.6423 18.194C10.5905 18.222 10.543 18.2473 10.5 18.27C10.457 18.2473 10.4095 18.222 10.3577 18.194C10.0803 18.0442 9.68127 17.8195 9.20111 17.5227C8.23945 16.9283 6.95952 16.0495 5.68246 14.9114C3.11056 12.6194 0.65 9.36754 0.65 5.34124C0.65 2.75864 2.77494 0.65 5.41536 0.65C7.47396 0.65 9.2235 1.93453 9.89087 3.72644Z"
+                                                                stroke="#58003F" stroke-width="1.3"></path>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ct_mt_30">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <img src="/img/user_1.png" alt="" class="ct_img_44 ct_white_border_1" />
+                                        <div>
+                                            <h5 class="ct_fs_14 ct_fw_600 mb-1">
+                                                Shreya Sharma
+                                            </h5>
+                                            <div class="d-flex align-items-center gap-3">
+                                                <p class="mb-0 ct_fs_12 ct_text_4B5563">
+                                                    July 26 2018, 01:03pm
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <p class="ct_fs_13 mb-0 ct_line_height_22 mt-3">
+                                        <span>Yesterday with Karen Miller and Marvin
+                                            Stemperd at the #Rock'n'Rolla concert in LA. Was
+                                            totally fantastic! People were really excited about
+                                            this one!</span>
+                                    </p>
+
+                                    <div class="ct_feed_img ct_mt_22">
+                                        <img src="/img/feed_img.png" alt="" />
+                                    </div>
+
+                                    <div class="ct_like_comment_div">
+                                        <ul>
+                                            <li>
+                                                <div
+                                                    class="ct_like_btn d-flex align-items-center gap-2 ct_cursor_pointer">
+                                                    <!-- show this class ct_active_like when user will like  -->
+                                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M8.00745 3.43164C4.84976 3.43164 2.28906 5.96603 2.28906 9.09285C2.28906 11.6169 3.28978 17.6075 13.1403 23.6633C13.3169 23.7701 13.5194 23.8265 13.7258 23.8265C13.9323 23.8265 14.1347 23.7701 14.3114 23.6633C24.1631 17.6075 25.1626 11.6169 25.1626 9.09285C25.1626 5.96603 22.6019 3.43164 19.4442 3.43164C16.2865 3.43164 13.7258 6.86268 13.7258 6.86268C13.7258 6.86268 11.1651 3.43164 8.00745 3.43164Z"
+                                                            stroke="#58003F" stroke-width="1.90613"
+                                                            stroke-linecap="round" stroke-linejoin="round" />
+                                                    </svg>
+
+                                                    <p class="mb-0 ct_fw_500">12.5 K</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div
+                                                    class="ct_comment_bnt d-flex align-items-center gap-2 ct_cursor_pointer">
+                                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M4.91842 19.1001C3.60758 16.9498 3.13052 14.3935 3.57755 11.9152C4.02458 9.43686 5.36468 7.20839 7.34418 5.65159C9.32369 4.0948 11.8052 3.31772 14.3191 3.46744C16.833 3.61715 19.2048 4.68328 20.9855 6.46401C22.7663 8.24475 23.8324 10.6165 23.9821 13.1304C24.1318 15.6443 23.3547 18.1258 21.7979 20.1053C20.2411 22.0848 18.0127 23.4249 15.5343 23.872C13.056 24.319 10.4997 23.842 8.34945 22.5311L3.43163 24.0179L4.91842 19.1001Z"
+                                                            stroke="#58003F" stroke-width="1.90613"
+                                                            stroke-linecap="round" stroke-linejoin="round" />
+                                                    </svg>
+
+                                                    <p class="mb-0 ct_fw_500">657</p>
+                                                </div>
+                                            </li>
+                                            <li class="ct_book_mark_icon ct_cursor_pointer">
+                                                <!-- add this class ct_book_mark_icon_active when user will book marked  -->
+                                                <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M14.868 8.06354V4.57532C14.868 4.272 14.9884 3.9811 15.2029 3.76662C15.4174 3.55213 15.7083 3.43164 16.0116 3.43164C16.3117 3.4329 16.5992 3.55202 16.8122 3.76331L24.818 11.7691C24.9251 11.8754 25.0102 12.0019 25.0683 12.1412C25.1264 12.2806 25.1562 12.4301 25.1562 12.5811C25.1562 12.732 25.1264 12.8815 25.0683 13.0209C25.0102 13.1603 24.9251 13.2868 24.818 13.3931L16.8122 21.3988C16.6517 21.5562 16.4483 21.6628 16.2275 21.7052C16.0067 21.7476 15.7783 21.7241 15.5709 21.6374C15.3634 21.5508 15.1861 21.4049 15.0611 21.2181C14.9361 21.0312 14.8689 20.8116 14.868 20.5868V17.0414H13.8958C12.0889 17.0145 10.2978 17.381 8.64672 18.1157C6.99568 18.8504 5.52429 19.9356 4.33468 21.2959C4.19132 21.4868 3.99183 21.628 3.76417 21.6998C3.53652 21.7715 3.29211 21.7703 3.0652 21.6962C2.83428 21.6183 2.6343 21.4686 2.4944 21.269C2.35451 21.0695 2.28201 20.8305 2.2875 20.5868C2.2875 10.1565 11.5284 8.37233 14.868 8.06354ZM13.8958 14.7312C14.6607 14.7297 15.4249 14.7794 16.1832 14.8799C16.4539 14.9209 16.701 15.0578 16.8794 15.2656C17.0578 15.4734 17.1557 15.7382 17.1553 16.0121V17.8305L22.3934 12.5811L17.1553 7.33158V9.15003C17.1553 9.45335 17.0348 9.74425 16.8203 9.95873C16.6059 10.1732 16.315 10.2937 16.0116 10.2937C14.9709 10.2937 6.7364 10.5224 4.95227 17.6476C7.5419 15.7383 10.6785 14.7155 13.8958 14.7312Z"
+                                                        fill="#58003F" />
+                                                </svg>
+                                            </li>
+                                        </ul>
+                                        <!-- show this div when user click on comment -->
+                                        <div class="ct_comment_area_main mt-4 d-none">
+                                            <input type="text" class="form-control ct_input w-100"
+                                                placeholder="Write comment..." />
+
+                                            <div class="ct_comment_area_scroll">
+                                                <div class="d-flex justify-content-between gap-2 mt-3">
+                                                    <div class="d-flex gap-3">
+                                                        <img src="/img/user_1.png" alt=""
+                                                            class="ct_img_40 ct_bor ct_white_border_1" />
+                                                        <div style="flex: 1">
+                                                            <div class="d-flex align-items-center gap-2 flex-wrap">
+                                                                <h5 class="ct_fs_15 ct_fw_600 mb-0">
+                                                                    Bradford Bogisich
+                                                                </h5>
+                                                                <div class="d-flex align-items-center gap-3">
+                                                                    <p class="mb-0 ct_fs_12">2 days ago</p>
+                                                                </div>
+                                                            </div>
+                                                            <p
+                                                                class="ct_fs_13 mb-0 ct_line_height_22 ct_commented_text mt-3">
+                                                                <span>Design Shot is an invitation to ponder
+                                                                    cn design as a living entity. capture of
+                                                                    embodying and influencing the flow of
+                                                                    thoughts and sensations in</span>
+                                                                <a href="#" class="ct_orange_text">Read more</a>
+                                                            </p>
+
+                                                            <div class="mt-4">
+                                                                <button
+                                                                    class="ct_bringle_btn ct_tansparent_btn w-100 ct_white_border_1 ct_border_radius_10">
+                                                                    Load more comments
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ct_like_btn">
+                                                        <!-- show this class ct_active_like when user will like  -->
+                                                        <svg width="21" height="19" viewBox="0 0 21 19" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path
+                                                                d="M9.89087 3.72644L10.5 5.36195L11.1091 3.72644C11.7765 1.93453 13.526 0.65 15.5846 0.65C18.2251 0.65 20.35 2.75864 20.35 5.34124C20.35 9.36765 17.8894 12.6195 15.3175 14.9115C14.0405 16.0496 12.7606 16.9283 11.7989 17.5227C11.3187 17.8195 10.9197 18.0443 10.6423 18.194C10.5905 18.222 10.543 18.2473 10.5 18.27C10.457 18.2473 10.4095 18.222 10.3577 18.194C10.0803 18.0442 9.68127 17.8195 9.20111 17.5227C8.23945 16.9283 6.95952 16.0495 5.68246 14.9114C3.11056 12.6194 0.65 9.36754 0.65 5.34124C0.65 2.75864 2.77494 0.65 5.41536 0.65C7.47396 0.65 9.2235 1.93453 9.89087 3.72644Z"
+                                                                stroke="#58003F" stroke-width="1.3"></path>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills-Members" role="tabpanel"
+                            aria-labelledby="pills-Members-tab">
+                            <div>
+                                <ul class="ct_member_user_list">
+                                    <li>
+                                        <div class="d-flex align-items-center gap-3">
+                                            <img src="/img/user_1.png" alt="" class="ct_img_62 ct_white_border_1" />
+                                            <div>
+                                                <h5 class="ct_fs_14 ct_fw_600 mb-0">
+                                                    Shreya Sharma
+                                                </h5>
+                                            </div>
+                                        </div>
+                                        <div class="ct_w_100_575">
+                                            <button
+                                                class="ct_bringle_btn px-5 ct_h_40 ct_btn_w_164 ct_w_100_575">Follow</button>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="d-flex align-items-center gap-3">
+                                            <img src="/img/user_1.png" alt="" class="ct_img_62 ct_white_border_1" />
+                                            <div>
+                                                <h5 class="ct_fs_14 ct_fw_600 mb-0">
+                                                    Shreya Sharma
+                                                </h5>
+                                            </div>
+                                        </div>
+                                        <div class="ct_w_100_575">
+                                            <button
+                                                class="ct_bringle_btn px-5 ct_outline_bringle_btn ct_h_40 ct_btn_w_164 ct_w_100_575">Following</button>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="d-flex align-items-center gap-3">
+                                            <img src="/img/user_1.png" alt="" class="ct_img_62 ct_white_border_1" />
+                                            <div>
+                                                <h5 class="ct_fs_14 ct_fw_600 mb-0">
+                                                    Shreya Sharma
+                                                </h5>
+                                            </div>
+                                        </div>
+                                        <div class="ct_w_100_575">
+                                            <button
+                                                class="ct_bringle_btn px-5 ct_h_40 ct_btn_w_164 ct_w_100_575">Follow</button>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="d-flex align-items-center gap-3">
+                                            <img src="/img/user_1.png" alt="" class="ct_img_62 ct_white_border_1" />
+                                            <div>
+                                                <h5 class="ct_fs_14 ct_fw_600 mb-0">
+                                                    Shreya Sharma
+                                                </h5>
+                                            </div>
+                                        </div>
+                                        <div class="ct_w_100_575">
+                                            <button
+                                                class="ct_bringle_btn px-5 ct_outline_bringle_btn ct_h_40 ct_btn_w_164 ct_w_100_575">Following</button>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="d-flex align-items-center gap-3">
+                                            <img src="/img/user_1.png" alt="" class="ct_img_62 ct_white_border_1" />
+                                            <div>
+                                                <h5 class="ct_fs_14 ct_fw_600 mb-0">
+                                                    Shreya Sharma
+                                                </h5>
+                                            </div>
+                                        </div>
+                                        <div class="ct_w_100_575">
+                                            <button
+                                                class="ct_bringle_btn px-5 ct_h_40 ct_btn_w_164 ct_w_100_575">Follow</button>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="d-flex align-items-center gap-3">
+                                            <img src="/img/user_1.png" alt="" class="ct_img_62 ct_white_border_1" />
+                                            <div>
+                                                <h5 class="ct_fs_14 ct_fw_600 mb-0">
+                                                    Shreya Sharma
+                                                </h5>
+                                            </div>
+                                        </div>
+                                        <div class="ct_w_100_575">
+                                            <button
+                                                class="ct_bringle_btn px-5 ct_outline_bringle_btn ct_h_40 ct_btn_w_164 ct_w_100_575">Following</button>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

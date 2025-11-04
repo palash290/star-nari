@@ -3,8 +3,9 @@ import { environment } from '../../../environments/environment';
 import { CommonModule } from '@angular/common';
 
 import { PhotoEditorSDKUI, EditorApi } from 'photoeditorsdk/no-polyfills';
-import { RouterLink } from "@angular/router";
+import { Router, RouterLink } from "@angular/router";
 import { HeaderComponent } from '../header/header.component';
+import { CommonService } from '../../services/common.service';
 
 const license = environment.photoEditorLicense;
 
@@ -15,6 +16,54 @@ const license = environment.photoEditorLicense;
   styleUrl: './my-profile.component.css'
 })
 export class MyProfileComponent {
+
+  data: any;
+  dob: any;
+
+  constructor(private router: Router, private commonService: CommonService) { }
+
+  ngOnInit() {
+    this.getDetails();
+  }
+
+  getDetails() {
+    this.commonService.get('user/profile').subscribe({
+      next: (resp: any) => {
+        this.data = resp.data;
+        // resp.data.dob;
+        this.dob = this.getAge(resp.data.dob)
+      },
+      error: (error) => {
+        console.log(error || 'Something went wrong!');
+      }
+    });
+  }
+
+
+  getAge(dobString: any) {
+    const dob = new Date(dobString);
+
+    // ✅ Use UTC values so timezone does NOT shift the date
+    const dobYear = dob.getUTCFullYear();
+    const dobMonth = dob.getUTCMonth();
+    const dobDate = dob.getUTCDate();
+
+    const today = new Date();
+    const todayYear = today.getUTCFullYear();
+    const todayMonth = today.getUTCMonth();
+    const todayDate = today.getUTCDate();
+
+    let age = todayYear - dobYear;
+
+    // ✅ If birthday hasn't occurred yet this year
+    if (todayMonth < dobMonth || (todayMonth === dobMonth && todayDate < dobDate)) {
+      age--;
+    }
+
+    return age;
+  }
+
+
 
   @Input()
   public src: string = '';
@@ -60,7 +109,7 @@ export class MyProfileComponent {
       reader.readAsDataURL(file);
     }
   }
-  
+
   openFilePicker(): void {
     this.fileInput.nativeElement.click();
   }

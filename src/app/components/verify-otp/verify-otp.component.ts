@@ -23,7 +23,8 @@ export class VerifyOtpComponent {
   isLoading: boolean = false;
   isLoadingResend: boolean = false;
   isPasswordVisible: boolean = false;
-  userEmail: any;
+  userNumber: any;
+  fcm: any;
 
   constructor(private fb: FormBuilder, public validationErrorService: ValidationErrorService, private toastr: NzMessageService,
     private service: CommonService, private route: Router, private router: ActivatedRoute
@@ -34,32 +35,41 @@ export class VerifyOtpComponent {
   }
 
   ngOnInit(): void {
+    this.fcm = localStorage.getItem('fcmNari');
     this.router.queryParams.subscribe(params => {
-      const email = params['email'];
+      const email = params['numbar'];
       // Optionally store it in a variable
-      this.userEmail = email;
+      this.userNumber = email;
     });
   }
 
 
   onSubmit() {
-    this.route.navigateByUrl('/verify-instructions');
-    return
+    // this.route.navigateByUrl('/verify-instructions');
+    // return
     this.Form.markAllAsTouched()
     if (this.Form.valid) {
       this.isLoading = true;
       const formURlData = new URLSearchParams()
-      formURlData.set('email', this.userEmail)
+      formURlData.set('phone_number', this.userNumber)
       formURlData.set('otp', this.Form.value.otp)
       // formURlData.set('newPassword', this.Form.value.password)
       this.service
-        .post('admin/verify-otp', formURlData.toString())
+        .post('public/verify-otp', formURlData.toString())
         .subscribe({
           next: (resp: any) => {
             if (resp.success == true) {
               this.isLoading = false;
+              localStorage.setItem('nariToken', resp.data.token)
               this.toastr.success(resp.message);
-              this.route.navigateByUrl('/reset-password')
+              debugger
+              if (resp.data.user.signup_stage == 0) {
+                this.route.navigateByUrl('/about-yourself');
+              } else if (resp.data.user.signup_stage == 1) {
+                this.route.navigateByUrl('/choose-intrest');
+              } else if (resp.data.user.signup_stage == 2) {
+                this.route.navigateByUrl('/main/home');
+              }
             } else {
               this.isLoading = false;
               this.toastr.warning(resp.message);
@@ -80,9 +90,10 @@ export class VerifyOtpComponent {
   resendOtp() {
     this.isLoadingResend = true
     const formURlData = new URLSearchParams()
-    formURlData.set('email', this.userEmail)
+    formURlData.set('phone_number', this.userNumber)
+    formURlData.set('fcm_token', this.fcm)
     this.service
-      .post('admin/resend-otp', formURlData.toString())
+      .post('public/login', formURlData.toString())
       .subscribe({
         next: (resp: any) => {
           if (resp.success == true) {
@@ -100,5 +111,5 @@ export class VerifyOtpComponent {
       })
   }
 
-  
+
 }

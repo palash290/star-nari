@@ -277,7 +277,7 @@ export class StoryViewerComponent {
   isCommentFocused = false;
 
   onCommentFocus() {
-    debugger
+    // debugger
     this.isCommentFocused = true;
     if (!this.isMobile()) {
       this.pause();

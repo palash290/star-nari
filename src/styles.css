@@ -35,3 +35,17 @@
 .ant-select-selector {
       height: 100% !important;
 }
+
+.cdk-overlay-container {
+      z-index: 9999999999999 !important;
+}
+
+.ant-otp-input {
+      width: 50px !important;
+      height: 50px;
+      border-radius: 5px !important;
+}
+
+.ant-otp {
+      justify-content: center;
+}

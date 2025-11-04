@@ -13,8 +13,14 @@ export class VerifyInstructionComponent {
   @ViewChild('video') video!: ElementRef<HTMLVideoElement>;
   capturedImage: string | null = null;
   stream!: MediaStream;
+  startVarification: boolean = true;
 
   ngOnInit() {
+    
+  }
+
+  startVarify(){
+    this.startVarification = false;
     this.startCamera();
   }
 
@@ -31,14 +37,28 @@ export class VerifyInstructionComponent {
 
   capturePhoto() {
     const canvas = document.createElement('canvas');
-    canvas.width = this.video.nativeElement.videoWidth;
-    canvas.height = this.video.nativeElement.videoHeight;
+    const video = this.video.nativeElement;
+
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+
     const context = canvas.getContext('2d');
     if (context) {
-      context.drawImage(this.video.nativeElement, 0, 0, canvas.width, canvas.height);
+      // ✅ Fix mirror effect in captured image
+      context.translate(canvas.width, 0); // move context to right edge
+      context.scale(-1, 1);               // flip horizontally
+
+      context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
       this.capturedImage = canvas.toDataURL('image/png');
     }
   }
+
+  removeImg() {
+    this.capturedImage = null;
+    this.startCamera();
+  }
+
 
   downloadImage() {
     if (!this.capturedImage) return;
@@ -54,5 +74,5 @@ export class VerifyInstructionComponent {
     this.stream?.getTracks().forEach(track => track.stop());
   }
 
-  
+
 }

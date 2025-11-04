@@ -62,36 +62,40 @@
                                                       Welcome <span class="ct_fs_24">&nbsp;to</span></h3>
                                                 <h4 class="ct_fs_46 ct_ff_Nomark  ct_letter_space_30 text-center">
                                                       STAR&nbsp; NARI</h4>
-                                                <form action="otp-verification.html" class="ct_mt_30">
+                                                <form [formGroup]="Form" class="ct_mt_30">
                                                       <div class="form-group">
                                                             <label for=""
                                                                   class="mb-2 ct_bringle_text d-block ct_fs_18 ct_fw_600">Mobile
                                                                   Number </label>
-                                                            <input type="number" class="form-control ct_input"
-                                                                  placeholder="Enter your mobile number">
+                                                            <input type="text" class="form-control ct_input"
+                                                                  placeholder="Enter your mobile number"
+                                                                  formControlName="numbar">
+                                                            <span class="ct_text_red mt-2">{{validationErrorService.getErrorMessage('Phone
+                                                                  number',
+                                                                  Form.get('numbar'))}}</span>
                                                       </div>
                                                       <div class="ct_mt_30">
-                                                            <button type="submit" routerLink="/verify-otp"
+                                                            <button type="submit" (click)="onSubmit()"
                                                                   class="ct_light_gradient_btn w-100">Continue</button>
                                                       </div>
                                                       <div class="ct_mt_30">
                                                             <ul
                                                                   class="d-flex align-items-center gap-3 justify-content-center">
-                                                                  <li>
+                                                                  <li (click)="signInWithGoogle()">
                                                                         <a>
                                                                               <img src="/img/google_icon.png" alt="">
                                                                         </a>
                                                                   </li>
-                                                                  <li>
+                                                                  <li (click)="signInWithLinkedIn()">
                                                                         <a>
                                                                               <img src="/img/linkdin_icon.png" alt="">
                                                                         </a>
                                                                   </li>
-                                                                  <li>
+                                                                  <!-- <li>
                                                                         <a>
                                                                               <img src="/img/twitter_icon.png" alt="">
                                                                         </a>
-                                                                  </li>
+                                                                  </li> -->
                                                             </ul>
 
                                                       </div>
@@ -109,3 +113,7 @@
             </div>
       </div>
 </section>
+
+<div class="ct_complete_setup_loader" *ngIf="loading">
+      <video src="/img/complete_setup_video.mp4" autoplay loop muted></video>
+</div>

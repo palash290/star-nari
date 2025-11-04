@@ -1,3 +1,63 @@
+@if(startVarification){
+<section class="ct_pt_55 pb-5 pt-4 ">
+  <div class="container-fluid">
+    <div class="col-md-12">
+      <div class="ct_px_60">
+        <div class="ct_logo_img ct_mb_35">
+          <a>
+            <img src="/img/logo.png" alt="">
+          </a>
+
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="ct_login_left_img">
+              <div class="ct_login_overlay_content">
+                <h4 class="ct_fs_32   ct_fw_600">Verify Your Identity</h4>
+                <p class="mb-0 ct_fs_14 ">For a safe women-only community, please confirm your identity with a quick
+                  selfie.</p>
+                <div class="ct_mt_30">
+                  <ul class="ct_verify_list">
+                    <li>
+                      <img src="/img/gala_secure.svg" alt="">Secure & encrypted verification
+                    </li>
+                    <li>
+                      <img src="/img/famicons_time-outline.svg" alt="">Takes less than 30 seconds
+                    </li>
+                    <li>
+                      <img src="/img/icon-park-outline_women.svg" alt=""> Women-only safe space
+                    </li>
+                  </ul>
+
+                  <div class="mt-5">
+                    <a (click)="startVarify()" class="ct_light_gradient_btn w-100">
+                      Start Verification</a>
+                  </div>
+                  <div class="ct_mt_30 ">
+                    <p class="ct_text_bringle_light ct_fs_14">
+                      <img src="/img/circum_camera.svg" alt="">
+                      Your photo is processed securely and deleted after verification
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 d-lg-block d-none">
+            <div class="ct_login_right_img p-3">
+              <img src="/img/verify_account_right_img.png" alt="" class="ct_object_contain">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+}
+
+
+@if(!startVarification){
 <section class="ct_pt_55 pb-5 pt-4 ">
   <div class="container-fluid">
     <div class="col-md-12">
@@ -16,17 +76,26 @@
                   <div class="ct_take_selfie_img">
                     <!-- <img src="/img/take_a_selfie_img.png" alt=""> -->
                     @if(!capturedImage){
-                    <video #video width="320" height="240" autoplay></video>
+                    <video #video height="300px" autoplay></video>
                     }
                     @if(capturedImage){
                     <img [src]="capturedImage" alt="Captured Photo" />
                     }
+                    <button (click)="capturePhoto()" class="ct_capture_img_btn">
+                      <img src="img/capture_img_icon.png" alt="">
+                    </button>
                   </div>
-                  <button (click)="capturePhoto()">Capture</button>
-                  <div class="mt-5">
+                  @if(capturedImage){
+                  <div class="ct_selfie_action">
+                    <span routerLink="/about-yourself" class="ct_save_selfie"><i class="fa-solid fa-check"></i></span>
+                    <span class="ct_discard_selfie" (click)="removeImg()"><i class="fa-solid fa-trash"></i></span>
+                  </div>
+                  }
+
+                  <!-- <div class="mt-5">
                     <a routerLink="/about-yourself" type="submit" class="ct_light_gradient_btn w-100">
                       Tell Us About Yourself</a>
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </div>
@@ -41,3 +110,4 @@
     </div>
   </div>
 </section>
+}

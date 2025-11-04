@@ -37,11 +37,15 @@
   </div>
 
   <!-- Navigation arrows (next/prev user) -->
-  <!-- <button class="nav-btn left" (click)="prevUser()">&#10094;</button>
-    <button class="nav-btn right" (click)="nextUser()">&#10095;</button> -->
+  <button class="nav-btn left" (click)="prevUser()">&#10094;</button>
+  <button class="nav-btn right" (click)="nextUser()">&#10095;</button>
 
   <!-- Comment input -->
-  <input type="text" class="comment-input" placeholder="Comment..." (focus)="onCommentFocus()" (blur)="onCommentBlur()"
-    (click)="$event.stopPropagation()" />
+  <div class="position-relative comment-input">
+    <input type="text" class="form-contol ct_input w-100 ct_border_radius_100" placeholder="Comment..."
+      (focus)="onCommentFocus()" (blur)="onCommentBlur()" (click)="$event.stopPropagation()" />
+    <button class="ct_bringle_btn ct_show_eye ct_send_chat_reply_btn_1 "><i
+        class="fa-solid fa-paper-plane"></i></button>
+  </div>
 
 </div>

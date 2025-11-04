@@ -69,8 +69,36 @@
             Terms & Conditions</a>
     </li>
     <li>
-        <a routerLink="/">
+        <a data-bs-toggle="modal" data-bs-target="#logout_modal">
             <img src="/img/log_out_icon.svg" alt="">
             Log Out</a>
     </li>
 </ul>
+
+<div class="modal fade" id="logout_modal" tabindex="-1" aria-labelledby="logout_modalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="ct_logout_modal_content_main">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center pb-5 mb-4">
+                    <div class="ct_logout_modal_content">
+                        <img src="assets/img/logout_vector.svg" alt="">
+                        <div>
+                            <h4 class="ct_fs_22 ct_fw_600 mb-3">Taking a Little Break?</h4>
+                            <p class="ct_text_4B5563 ct_fs_18 mb-0">Your journey doesn’t end here. Continue inspiring
+                                whenever you return.</p>
+                        </div>
+                        <div class="d-flex align-items-center gap-3 mt-5 justify-content-center ct_flex_col_575">
+                            <button type="button" class="ct_bringle_btn ct_outline_bringle_btn ct_w_100_575"
+                                data-bs-dismiss="modal" routerLink="/">Log me out</button>
+                            <button type="button" class="ct_bringle_btn ct_w_100_575">Stay a Little Longer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -64,6 +64,10 @@ export const routes: Routes = [
                         path: 'view-group',
                         loadComponent: () => import('./components/kitty-group/view-group/view-group.component').then(m => m.ViewGroupComponent)
                   },
+                  {
+                        path: 'joined-kitty-group',
+                        loadComponent: () => import('./components/kitty-group/joined-kitty-group/joined-kitty-group.component').then(m => m.JoinedKittyGroupComponent)
+                  },
 
                   {
                         path: 'marketplace',

@@ -5,14 +5,14 @@
     <div>
         <a routerLink="/main/my-profile">
             <div class="ct_profile_img">
-                <img src="/img/girl_img.jpg" alt="" class="ct_img_75" />.
+                <img [src]="data?.profile_image ? data?.profile_image : '/img/np_pro.png'" alt="" class="ct_img_75" />
                 <p class="mb-0">Profile</p>
             </div>
             <div class="text-center mt-3">
                 <h4 class="ct_bringle_text ct_fw_600 ct_fs_16 mb-1">
-                    Priya Sharma
+                    {{data?.full_name}}
                 </h4>
-                <p class="mb-0 ct_text_4B5563">+91 7867654567</p>
+                <p class="mb-0 ct_text_4B5563">{{data?.phone_number}}</p>
             </div>
         </a>
     </div>

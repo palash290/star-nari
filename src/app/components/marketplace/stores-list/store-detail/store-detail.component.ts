@@ -5,7 +5,7 @@ import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-store-detail',
-  imports: [RouterLink, HeaderComponent],
+  imports: [HeaderComponent, RouterLink],
   templateUrl: './store-detail.component.html',
   styleUrl: './store-detail.component.css'
 })

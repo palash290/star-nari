@@ -4,15 +4,16 @@ import { getAuth } from "firebase/auth";
 
 export const environment = {
       production: false,
-      apiUrl: 'http://my-prod-url',
+      // apiUrl: 'http://my-prod-url',
+      apiUrl: 'http://192.168.29.130:4006/api/',
       firebaseConfig: {
-       apiKey: "AIzaSyBHhUuJmVp97wLaEKk0d0TzDrxL_AQA5Ng",
-  authDomain: "star-nari.firebaseapp.com",
-  projectId: "star-nari",
-  storageBucket: "star-nari.firebasestorage.app",
-  messagingSenderId: "621479880031",
-  appId: "1:621479880031:web:3f19587bc50770614502ea",
-  measurementId: "G-W7W442N7WY",
+            apiKey: "AIzaSyBHhUuJmVp97wLaEKk0d0TzDrxL_AQA5Ng",
+            authDomain: "star-nari.firebaseapp.com",
+            projectId: "star-nari",
+            storageBucket: "star-nari.firebasestorage.app",
+            messagingSenderId: "621479880031",
+            appId: "1:621479880031:web:3f19587bc50770614502ea",
+            measurementId: "G-W7W442N7WY",
             vapidKey: 'BEth1UNGEwtbRvYprqD72fnfDj1J46db9pD5BoteN7rvaWgN0NHTKwd9l53DfqyUAbXqyTnDyPRcJ3apOXCyrb0'
       },
       linkedin: {
@@ -21,11 +22,12 @@ export const environment = {
             scope: 'r_emailaddress r_liteprofile',
       },
       // photoEditorLicense: "GtARY0IQ0tzLxAmZfavBpG-SaAlwhkRHUPOGqL3IIthMk_YrwtX9wB8lQ0BMAEwF"
-        photoEditorLicense: `{
+      photoEditorLicense: `{
     "owner": "Imgly Inc.",
     "version": "2.4",
     "license": "GtARY0IQ0tzLxAmZfavBpG-SaAlwhkRHUPOGqL3IIthMk_YrwtX9wB8lQ0BMAEwF"
-  }`
+  }`,
+      clientSecret: 'WPL_AP1.PpK443HdIrIHPTN1.x7+gJQ=='
 };
 // Initialize Firebase
 const app = initializeApp(environment.firebaseConfig);

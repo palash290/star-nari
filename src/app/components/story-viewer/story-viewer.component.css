@@ -11,7 +11,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 360px;
-  height: 640px;
+  height: calc(100vh - 150px);
   background: black;
   border-radius: 16px;
   overflow: hidden;
@@ -19,7 +19,8 @@
   display: flex;
   flex-direction: column;
 }
- /* .viewer {
+
+/* .viewer {
   position: relative;
   width: 360px;
   height: 640px;
@@ -131,6 +132,8 @@ video {
   align-items: center;
   justify-content: center;
   transition: 0.2s;
+  cursor: pointer;
+  z-index: 99;
 }
 
 .nav-btn:hover {
@@ -147,21 +150,38 @@ video {
 
 .comment-input {
   position: absolute;
-  bottom: 20px;
+  bottom: 0px;
   left: 50%;
   transform: translateX(-50%);
-  width: 80%;
-  max-width: 280px;
+  width: 100%;
+  max-width: 100%;
   padding: 10px 15px;
   border-radius: 20px;
   border: none;
   outline: none;
-  background: rgba(255, 255, 255, 0.9);
+
   font-size: 14px;
   z-index: 20;
   /* add this */
 }
 
+.comment-input input {
+  outline: none;
+  height: 40px;
+  padding-right: 60px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.ct_send_chat_reply_btn_1 {
+  height: 30px;
+  right: 20px;
+  border-radius: 100px;
+  padding: 2px 15px;
+}
+
+.ct_border_radius_100 {
+  border-radius: 100px;
+}
 
 .comment-input::placeholder {
   color: #555;

@@ -54,12 +54,13 @@
 
         <div class="row ct_mt_55">
             <div class="col-md-12">
-                <form action="">
+                <form [formGroup]="Form">
                     <div class="ct_white_bg ct_light_white_bg">
                         <div class="ct_profile_img2 mx-auto">
-                            <img src="/img/girl_img_2.jpg" alt="">
+                            <img [src]="croppedImage ? croppedImage : '/img/no_pro.png'" alt="">
                             <label for="ct_profile_update">
-                                <input type="file" class="d-none" id="ct_profile_update">
+                                <input type="file" class="d-none" id="ct_profile_update"
+                                    (change)="onProfileImage($event)">
                                 <div class="ct_upload_icon">
                                     <img src="/img/upload_icon.png" alt="">
                                 </div>
@@ -72,21 +73,20 @@
                             <div class="form-group mb-4">
                                 <label for="" class="ct_fw_600 mb-2 d-block">Name</label>
                                 <input type="text" class="form-control ct_input" placeholder="Enter name"
-                                    value="Emma Watson">
+                                    value="Emma Watson" formControlName="name">
                             </div>
 
                         </div>
                         <div class="col-md-6">
                             <div class="form-group mb-4">
                                 <label for="" class="ct_fw_600 mb-2 d-block">Dob</label>
-                                <input type="date" class="form-control ct_input">
+                                <input type="date" class="form-control ct_input" formControlName="dob">
                             </div>
-
                         </div>
                         <div class="col-md-12">
                             <div class="form-group mb-4">
                                 <label for="" class="ct_fw_600 mb-2 d-block">About Me</label>
-                                <textarea class="form-control ct_input h-auto" rows="4"
+                                <textarea class="form-control ct_input h-auto" rows="4" formControlName="bio"
                                     placeholder="Enter description here...">Teacher by profession, artist by heart 🎨 | Here to connect, learn, and share.</textarea>
                             </div>
 
@@ -97,86 +97,42 @@
                         <div class="col-md-12">
                             <h4 class="ct_fs_26  ct_fw_600 ct_bringle_text mb-4">Interests </h4>
                             <div class="ct_grid_3">
-                                <div class="ct_your_interest_card">
+                                <div class="ct_your_interest_card" *ngFor="let item of intrests"
+                                    (click)="toggleInterest(item)"
+                                    [class.active]="selectedIds.includes(item.interest_id)">
                                     <div class="ct_interest_icon">
                                         <img src="/img/cooking_icon.svg" alt="">
-
                                     </div>
-                                    <h4 class="mb-0">Cooking</h4>
+                                    <h4 class="mb-0">{{ item?.name }}</h4>
                                 </div>
-                                <div class="ct_your_interest_card active">
-                                    <div class="ct_interest_icon">
-                                        <img src="/img/Fashion_icon.svg" alt="">
-
-                                    </div>
-                                    <h4 class="mb-0">Fashion</h4>
-                                </div>
-                                <div class="ct_your_interest_card">
-                                    <div class="ct_interest_icon">
-                                        <img src="/img/Travelling_icon.svg" alt="">
-
-                                    </div>
-                                    <h4 class="mb-0">Travelling</h4>
-                                </div>
-                                <div class="ct_your_interest_card">
-                                    <div class="ct_interest_icon">
-                                        <img src="/img/Vloggin_icon.svg" alt="">
-
-                                    </div>
-                                    <h4 class="mb-0">Vlogging</h4>
-                                </div>
-                                <div class="ct_your_interest_card">
-                                    <div class="ct_interest_icon">
-                                        <img src="/img/Teaching_icon.svg" alt="">
-
-                                    </div>
-                                    <h4 class="mb-0">Teaching</h4>
-                                </div>
-                                <div class="ct_your_interest_card active">
-                                    <div class="ct_interest_icon">
-                                        <img src="/img/Music_icon.svg" alt="">
-
-                                    </div>
-                                    <h4 class="mb-0">Music</h4>
-                                </div>
-                                <div class="ct_your_interest_card active">
-                                    <div class="ct_interest_icon">
-                                        <img src="/img/Fitness_icon.svg" alt="">
-
-                                    </div>
-                                    <h4 class="mb-0">Fitness</h4>
-                                </div>
-                                <div class="ct_your_interest_card">
-                                    <div class="ct_interest_icon">
-                                        <img src="/img/Shopping_icon.svg" alt="">
-
-                                    </div>
-                                    <h4 class="mb-0">Shopping</h4>
-                                </div>
-                                <div class="ct_your_interest_card ">
-                                    <div class="ct_interest_icon">
-                                        <img src="/img/Dancing_icon.svg" alt="">
-
-                                    </div>
-                                    <h4 class="mb-0">Dancing</h4>
-                                </div>
-
                             </div>
-
                         </div>
-
                     </div>
-
                     <div class="d-flex align-items-center justify-content-end gap-3 mt-5 ct_flex_col_575">
-                        <a
-                            class="ct_bringle_btn ct_outline_bringle_btn px-5 ct_w_100_575">Cancel</a>
-                        <button class="ct_bringle_btn px-5 ct_w_100_575">Save Changes</button>
-
+                        <a class="ct_bringle_btn ct_outline_bringle_btn px-5 ct_w_100_575">Cancel</a>
+                        <button (click)="onSubmit()" class="ct_bringle_btn px-5 ct_w_100_575">Save
+                            Changes</button>
                     </div>
                 </form>
             </div>
-
         </div>
+    </div>
 
-
+    <div class="modal fade modal-lg" id="ct_feedback_detail_modal" tabindex="-1"
+        aria-labelledby="ct_feedback_detail_modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <image-cropper [imageChangedEvent]="imageChangedEvent" [maintainAspectRatio]="true"
+                        [roundCropper]="true" [aspectRatio]="38 / 27" [resizeToWidth]="190" [resizeToHeight]="135"
+                        format="png" (imageCropped)="imageCropped($event)">
+                    </image-cropper>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="ct_outline_btn d-none" data-bs-dismiss="modal"
+                        #closeBtn>Cancel</button>
+                    <button type="button" class="ct_bringle_btn px-5 ct_w_100_575" (click)="onDone()">Done</button>
+                </div>
+            </div>
+        </div>
     </div>

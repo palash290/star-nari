@@ -6,7 +6,6 @@
                     <a>
                         <img src="/img/logo.png" alt="">
                     </a>
-
                 </div>
 
                 <div class="row">
@@ -18,14 +17,18 @@
                                     opportunities.</p>
                                 <form class="ct_mt_30">
                                     <div class="ct_grid_3">
-                                        <div class="ct_your_interest_card">
-                                            <div class="ct_interest_icon">
-                                                <img src="/img/cooking_icon.svg" alt="">
+                                        <div class="ct_your_interest_card" *ngFor="let item of data"
+                                            (click)="toggleInterest(item)"
+                                            [class.active]="selectedIds.includes(item.interest_id)">
 
+                                            <div class="ct_interest_icon">
+                                                <img [src]="item.image ? item.image : '/img/cooking_icon.svg'" alt="">
                                             </div>
-                                            <h4 class="mb-0">Cooking</h4>
+
+                                            <h4 class="mb-0">{{ item?.name }}</h4>
                                         </div>
-                                        <div class="ct_your_interest_card active">
+
+                                        <!-- <div class="ct_your_interest_card active">
                                             <div class="ct_interest_icon">
                                                 <img src="/img/Fashion_icon.svg" alt="">
 
@@ -80,11 +83,12 @@
 
                                             </div>
                                             <h4 class="mb-0">Dancing</h4>
-                                        </div>
+                                        </div> -->
 
                                     </div>
                                     <div class="mt-5">
-                                        <a routerLink="/main/home" type="submit" class="ct_light_gradient_btn w-100">Complete
+                                        <a (click)="onSubmit()" type="submit"
+                                            class="ct_light_gradient_btn w-100">Complete
                                             Setup</a>
                                     </div>
 

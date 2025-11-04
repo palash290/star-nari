@@ -1,9 +1,15 @@
-<div class="story-list">
-    <div *ngFor="let story of stories; let i = index" class="story-item" (click)="openStory(i)">
-        <img [src]="story.profilePic" class="avatar" />
-        <p>{{ story.userName }}</p>
+<div class="d-flex align-items-center gap-sm-5 gap-2">
+    <app-upload-story></app-upload-story>
+    <div class="owl-carousel ct_story_slider_1 owl-theme" style="overflow-x: hidden">
+        <div class="item" *ngFor="let story of stories; let i = index">
+            <div class="ct_story_video" (click)="openStory(i)" data-bs-target="#ct_story_view_modal"
+                data-bs-toggle="modal">
+                <img [src]="story.profilePic" alt="" class="ct_img_80" />
+            </div>
+        </div>
     </div>
 </div>
+
 
 <app-story-viewer *ngIf="activeIndex !== null" [stories]="stories" [activeIndex]="activeIndex"
     (close)="closeViewer()" />

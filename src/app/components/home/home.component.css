@@ -1,4 +1,4 @@
-.ct_story_horizontal_scroll {
+/* .ct_story_horizontal_scroll {
   display: flex;
   gap: 12px;
   overflow-x: auto;
@@ -18,4 +18,4 @@
 
 .ct_story_horizontal_scroll .item {
   flex: 0 0 auto;
-}
+} */

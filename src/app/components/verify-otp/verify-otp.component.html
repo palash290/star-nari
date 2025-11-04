@@ -38,7 +38,7 @@
                         <div class="ct_login_left_img">
                             <div class="ct_login_overlay_content">
                                 <h4 class="ct_fs_32  text-center ct_fw_600">Enter verification code</h4>
-                                <p class="mb-0 ct_fs_14 text-center">We have send a Code to : +100******00 Change</p>
+                                <p class="mb-0 ct_fs_14 text-center">We have send a Code to : {{userNumber}} Change</p>
                                 <form [formGroup]="Form" class="ct_mt_30">
                                     <!-- <div class="ct_otp_input_main">
                                         <input type="number" class="form-control ct_input">
@@ -60,7 +60,7 @@
 
                                     <div class="ct_mt_30">
                                         <button type="submit" class="ct_light_gradient_btn w-100 gap-2"
-                                            routerLink="/verify-instructions">
+                                            (click)="onSubmit()">
                                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <path
@@ -72,11 +72,10 @@
                                                     stroke="#58003F" stroke-width="1.25" stroke-linecap="round"
                                                     stroke-linejoin="round" />
                                             </svg>
-
                                             Confirm Code</button>
                                     </div>
                                     <div class="ct_mt_30 text-center">
-                                        <p class="ct_text_bringle_light ct_fs_14">Didn’t receive the OTP? <a
+                                        <p class="ct_text_bringle_light ct_fs_14">Didn’t receive the OTP? <a (click)="resendOtp()"
                                                 class="ct_bringle_text ct_decoration_underline">Resend Code</a></p>
                                     </div>
                                 </form>

@@ -1,17 +1,16 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { integerValidator, NoWhitespaceDirective, passwordMatchValidator, passwordMismatchValidator, strongPasswordValidator } from '../../helper/validators';
+import { NoWhitespaceDirective } from '../../helper/validators';
 import { ValidationErrorService } from '../../services/validation-error.service';
 import { CommonModule } from '@angular/common';
-import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzMessageService } from 'ng-zorro-antd/message';
-import { QuillModule } from 'ngx-quill';
 import { browserPopupRedirectResolver, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { CommonService } from '../../services/common.service';
 import { Auth } from '@angular/fire/auth';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { environment } from '../../../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { FcmService } from '../../services/fcm.service';
 
 @Component({
   selector: 'app-log-in',
@@ -24,18 +23,19 @@ export class LogInComponent {
   Form: FormGroup;
   loading: boolean = false;
   googleDetail: any;
+  fcmToken: any;
 
-
-  constructor(private auth: Auth, private fb: FormBuilder, public validationErrorService: ValidationErrorService, private toastr: NzMessageService, private service: CommonService, private route: ActivatedRoute,  private http: HttpClient) {
+  constructor(private auth: Auth, private fb: FormBuilder, public validationErrorService: ValidationErrorService, private toastr: NzMessageService, private service: CommonService, private route: ActivatedRoute, private http: HttpClient,
+    private fcmService: FcmService, private router: Router) {
     this.Form = this.fb.group({
       numbar: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20), NoWhitespaceDirective.validate]],
     });
   }
 
-  // ngOnInit(): void {
-  //   this.toastr.success('Welcome to ZYNQ');
-  // }
   ngOnInit() {
+
+    this.fcmService.listenForMessages();
+    this.getFcmToken();
     // Check if LinkedIn redirected back with a "code"
     // this.route.queryParams.subscribe(params => {
     //   const code = params['code'];
@@ -46,12 +46,52 @@ export class LogInComponent {
     // });
 
     const params = new URLSearchParams(window.location.search);
-  const code = params.get('code');
-  if (code) {
-    this.getAccessToken(code);
-    // Clean up URL so user doesn't see ?code=XYZ
-    window.history.replaceState({}, document.title, window.location.pathname);
+    const code = params.get('code');
+    if (code) {
+      this.getAccessToken(code);
+      // Clean up URL so user doesn't see ?code=XYZ
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }
   }
+
+  onSubmit() {
+    this.Form.markAllAsTouched()
+    if (this.Form.valid) {
+      this.loading = true
+      const formURlData = new URLSearchParams()
+      formURlData.set('phone_number', this.Form.value.numbar)
+      formURlData.set('fcm_token', this.fcmToken)
+      this.service
+        .post('public/login', formURlData.toString())
+        .subscribe({
+          next: (resp: any) => {
+            if (resp.success == true) {
+              this.loading = false;
+              this.toastr.success(resp.message);
+              this.router.navigate(['/verify-otp'], {
+                queryParams: { numbar: this.Form.value.numbar }
+              });
+            } else {
+              this.loading = false;
+              this.toastr.warning(resp.message);
+            }
+          },
+          error: (error: any) => {
+            this.loading = false;
+            this.toastr.warning(error || 'Something went wrong!');
+          }
+        })
+    }
+  }
+
+  getFcmToken() {
+    this.fcmService.requestPermissionAndGetToken().then(token => {
+      if (token) {
+        console.log('Token:', token);
+        this.fcmToken = token;
+        localStorage.setItem('fcmNari', token);
+      }
+    });
   }
 
 
@@ -61,8 +101,6 @@ export class LogInComponent {
       const result = await signInWithPopup(this.auth, provider, browserPopupRedirectResolver);
       console.log('User signed in:', result.user);
       this.googleLogin(result.user);
-      // this.apiService.setShowBtn(true);
-      //this.googleDetail = result.user;
     } catch (error) {
       console.error('Error during sign-in:', error);
     }
@@ -73,9 +111,9 @@ export class LogInComponent {
 
     this.loading = true;
 
-    const fullName = userDet.displayName; // Example: "Palash Jain"
-    const [firstName, ...rest] = fullName.split(' '); // Split by space
-    const lastName = rest.join(' '); // Join the remaining parts as last name
+    const fullName = userDet.displayName;
+    const [firstName, ...rest] = fullName.split(' ');
+    const lastName = rest.join(' ');
 
     const formURlData = new URLSearchParams();
     formURlData.set('first_name', firstName);
@@ -110,18 +148,34 @@ export class LogInComponent {
   }
 
 
+  // signInWithLinkedIn() {
+  //   const clientId = '782bppslw7ms0r';
+  //   const redirectUri = 'http://localhost:4200/';
+  //   const scope = 'openid profile email';
+  //   const state = Math.random().toString(36).substring(2);
+
+  //   const authUrl = `https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=${clientId}&redirect_uri=${encodeURIComponent(
+  //     redirectUri
+  //   )}&state=${state}&scope=${encodeURIComponent(scope)}`;
+
+  //   window.location.href = authUrl;
+  // }
+
   signInWithLinkedIn() {
     const clientId = '782bppslw7ms0r';
-    const redirectUri = 'http://localhost:4200/';
+    const redirectUri = 'http://localhost:4200';
     const scope = 'openid profile email';
     const state = Math.random().toString(36).substring(2);
-
-    const authUrl = `https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=${clientId}&redirect_uri=${encodeURIComponent(
-      redirectUri
-    )}&state=${state}&scope=${encodeURIComponent(scope)}`;
+    const authUrl =
+      `https://www.linkedin.com/oauth/v2/authorization?response_type=code` +
+      `&client_id=${clientId}` +
+      `&redirect_uri=${encodeURIComponent(redirectUri)}` +
+      `&state=${state}` +
+      `&scope=${encodeURIComponent(scope)}`;
 
     window.location.href = authUrl;
   }
+
 
   getAccessToken(code: string) {
     const clientId = '782bppslw7ms0r';

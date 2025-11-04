@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
+import { CommonService } from '../../services/common.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -10,10 +11,28 @@ import { Router, RouterLink } from '@angular/router';
 })
 export class SidebarComponent {
 
-  constructor(private router: Router) { }
+  data: any;
 
-   isActive(route: string): boolean {
+  constructor(private router: Router, private commonService: CommonService) { }
+
+  ngOnInit() {
+    this.getDetails();
+  }
+
+  getDetails() {
+    this.commonService.get('user/profile').subscribe({
+      next: (resp: any) => {
+        this.data = resp.data;
+      },
+      error: (error) => {
+        console.log(error || 'Something went wrong!');
+      }
+    });
+  }
+
+  isActive(route: string): boolean {
     return this.router.isActive(route, true);
   }
+
 
 }
